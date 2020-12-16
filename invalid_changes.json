@@ -1,0 +1,28 @@
+{
+    "playlist_additions": {},
+    "remove_playlists":
+    [
+        1,
+        3
+    ],
+    "new_playlists":
+    [
+        {
+            "user_id": 1,
+            "song_ids": [2, 32, 4]
+        },
+        {},
+        [],
+        {
+            "user_id": 1
+        },
+        {
+            "song_ids": [2, 32, 4]
+        },
+        {
+            "user_id": 4,
+            "song_ids": []
+        }
+
+    ]
+}

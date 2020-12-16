@@ -1,0 +1,52 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Playlist Changeset",
+    "description": "Set of changes to apply to playlists",
+    "type": "object",
+    "properties": {
+        "playlist_additions": {
+            "type": "array",
+            "items": {
+                "title": "Playlist Addition",
+                "description": "Song ID to be added and Playlist ID to be added to",
+                "type": "object",
+                "properties": {
+                    "playlist_id": { "type": "integer"},
+                    "song_id": { "type": "integer"}
+                },
+                "required": [
+                    "playlist_id",
+                    "song_id"
+                ]
+            }
+        },
+        "remove_playlists": {
+            "type": "array",
+            "items": {
+                "title": "Playlist to Remove",
+                "description": "ID of playlist to remove",
+                "type": "integer"
+            }
+        },
+        "new_playlists": {
+            "type": "array",
+            "items": {
+                "title": "New Playlist",
+                "description": "Array of songs to compose new playlist with an associated user id",
+                "type": "object",
+                "properties": {
+                    "user_id": {"type": "integer"},
+                    "song_ids": {
+                        "type": "array",
+                        "items": { "type": "integer" },
+                        "minItems": 1
+                    }
+                },
+                "required": [
+                    "user_id",
+                    "song_ids"
+                ]
+            }
+        }
+    }
+}

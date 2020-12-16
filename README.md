@@ -52,8 +52,12 @@ file.
 
 The most important thing we could do if we were moving this application to a
 larger scale would be to use a database instead of a JSON file to store the
-data (playlists, users, songs). As I anticipate changes would likely be coming
-from external users, I would also recommend moving to a server executing update
-queries on the database, likely providing a RESTful interface to do so.
-For very large scale, I would also recommend moving to UUIDs instead of
+data (playlists, users, songs). This would allow for much faser recall and
+updating of the data, as we wouldn't be forced to ingest and parse a text
+file every time, nor hold the entire database in memory. As I anticipate
+changes would likely be coming from external users, I would also recommend
+moving to a server executing update queries on the database, likely providing a
+RESTful interface to do so. REST interfaces are an industry standard, which
+means it is easy to explain the protocol to anyone who might want to implement a
+client. For very large scale, I would also recommend moving to UUIDs instead of
 auto-incrementing sequential keys for IDs to allow for a distributed database.
